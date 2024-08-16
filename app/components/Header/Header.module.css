@@ -1,0 +1,87 @@
+/* styles/Header.module.css */
+.subtitle{
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 0;
+    color: #1792d2;
+    letter-spacing: 0.05em;
+    font-family: 'Ubuntu Bold', sans-serif;
+  }
+  .article-title {
+      font-size: 1.5rem;
+  }
+  
+  .article-read-more,
+  .article-info {
+      font-size: .875rem;
+  }
+  
+  .article-read-more {
+      color: #1792d2;
+      text-decoration: none;
+      font-weight: 700;
+  }
+  .article-read-more:hover,
+  .article-read-more:focus {
+      color: #143774;
+      text-decoration: underline;
+  }
+  .article-info {
+      margin: 2em 0;
+  }
+.header {
+    padding: 2em 0;
+    text-align: center;
+    background: #f0f8ff;
+    font-family: sans-serif;
+    margin-bottom: 3em;
+  }
+  
+  .containerFlex {
+    max-width: 70vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 1em;
+  }
+  
+  .siteTitle {
+    /* Add styles for site title */
+  }
+  
+  .subtitle {
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin: 0;
+    color: #1792d2;
+    letter-spacing: 0.05em;
+    font-family: 'Ubuntu Bold', sans-serif;
+  }
+  
+  .currentPage {
+    /* Add styles for the current page link */
+  }
+  .nav ul{
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+  }
+  .nav li{
+    margin: 0 1em;
+  }
+  .nav a{
+    text-decoration: none;
+    color: #707070;
+    font-weight: 700; 
+    padding: 0.25em 0;
+  }
+  
+  .nav a:hover,
+  .nav a:focus{
+    color: #143774;
+    border-bottom: 1px solid black;
+    transition: .3s ease;
+  }
+
+  

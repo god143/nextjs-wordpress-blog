@@ -1,0 +1,35 @@
+.sidebar {
+    max-width: 23%;
+  }
+  
+  .widget {
+    margin-bottom: 2em;
+  }
+  
+  .widgetTitle {
+    font-family: 'Lora', serif;
+    font-weight: 400;
+    color: #143774;
+    margin-top: 0;
+  }
+  
+  .widgetImage {
+    max-width: 100%;
+    display: block;
+  }
+  
+  .widgetBody {
+    font-family: 'Ubuntu', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 300;
+  }
+  
+  .recentPost {
+    margin-bottom: 1.5em;
+  }
+  
+  .recentPostTitle {
+    font-size: 1rem;
+    color: #707070;
+  }
+  

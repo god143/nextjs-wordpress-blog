@@ -1,8 +1,10 @@
 // app/page.js
-
 import { gql } from '@apollo/client';
 import client from '../lib/apolloClient';
 import Link from 'next/link';
+import Article from '../components/Article/Article';
+
+
 
 export default async function Home() {
   // Fetch data on the server
@@ -10,33 +12,41 @@ export default async function Home() {
     query: gql`
       query AllPosts {
         posts {
-          nodes {
-            title
-            excerpt
-            slug
-          }
+           nodes {
+      title
+      excerpt
+      slug
+      date
+      commentCount
+      id
+    }
         }
       }
     `,
+    fetchPolicy: 'no-cache', // Ensure fresh data fetch
+  
   });
+
 
   const posts = data.posts.nodes;
 
+  console.log('new data');
+  console.log(posts);
+
   return (
-    <div>
-      <h1>Blog Posts</h1>
+    <>
+      
       {posts.length > 0 ? (
-        posts.map((post) => (
-          <article key={post.slug}>
-            <h2>
-              <Link href={`/posts/${post.slug}`}>{post.title}</Link>
-            </h2>
-            <div dangerouslySetInnerHTML={{ __html: post.excerpt }} />
-          </article>
+        posts.map((post, index) => (
+          <Article increments={index + 1}  title={post.title} date={new Date(post.date).toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })} comments={post.commentCount} image={'../../images/demo.jpg'} alt='no description' body={post.excerpt} key={post.id} postslug={post.slug}/>
+          
         ))
       ) : (
         <p>No posts found.</p>
       )}
-    </div>
+    </>
   );
 }
+
+export const revalidate = 10;
+
